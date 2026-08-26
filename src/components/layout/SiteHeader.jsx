@@ -61,9 +61,9 @@ export function SiteHeader() {
   }, [mobileOpen])
 
   return (
-    <header className={`site-header site-header--protective${scrolled || mobileOpen ? ' site-header--solid' : ''}`} onMouseLeave={() => setOpenMenu(null)}>
+    <header className={`site-header site-header--protective${scrolled || mobileOpen ? ' site-header--solid' : ''}${mobileOpen ? ' site-header--menu-open' : ''}`} onMouseLeave={() => setOpenMenu(null)}>
       <div className="site-header__inner">
-        <Logo />
+        <Logo light={mobileOpen} />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {megaMenuGroups.map((group) => <div className="desktop-nav__group" key={group.key}>
             <button type="button" aria-expanded={openMenu === group.key} aria-controls={`mega-${group.key}`} onClick={() => setOpenMenu((value) => value === group.key ? null : group.key)}>
