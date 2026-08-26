@@ -8,6 +8,8 @@ export function SiteLayout() {
   const [showMobileInquiry, setShowMobileInquiry] = useState(() => window.scrollY > 700)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
+    const main = document.getElementById('main-content')
+    main?.focus({ preventScroll: true })
   }, [pathname])
   useEffect(() => {
     const onScroll = () => setShowMobileInquiry(window.scrollY > 700)
@@ -18,7 +20,7 @@ export function SiteLayout() {
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
-      <main id="main-content"><Outlet /></main>
+      <main id="main-content" tabIndex="-1"><Outlet /></main>
       <SiteFooter />
       <Link className={`mobile-inquiry${showMobileInquiry && pathname !== '/contact' ? ' mobile-inquiry--visible' : ''}`} to="/contact">Plan Your Event</Link>
     </>

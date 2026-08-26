@@ -5,12 +5,13 @@ This repository contains the standalone `MSPixelPulseAgency/wedding-planner` dem
 - Brand: LUMA Weddings & Events
 - Contact placeholders: `hello@mspixelpulse.com`, `+1 (000) 000-0000`
 - Service context: concept studio presented as serving Toronto, the GTA and destination celebrations
-- Production URL: `https://luma-weddings-events.vercel.app/`
+- Production URL: `https://luma-event-planning.vercel.app/`
+- Legacy alias: `https://luma-weddings-events.vercel.app/`
 - Demo content must remain clearly illustrative and must not acquire invented business claims.
 - Keep stock-media credits in `CREDITS.md` and do not replace assets with unlicensed editorial photography.
 - Preserve semantic HTML, keyboard interactions, visible focus, reduced-motion behaviour and mobile containment.
 - Run lint, tests, build and the SEO audit before pushing.
-- Do not commit secrets or add a backend/form provider without explicit authorization.
+- Keep Resend and Supabase secrets server-side and uncommitted. Form endpoints must fail closed when providers are unconfigured.
 - Do not edit unrelated repositories, especially `Oyemahak/Katrina-Studios`.
 
 Role-specific maintenance instructions live in `.ai-agents/`.

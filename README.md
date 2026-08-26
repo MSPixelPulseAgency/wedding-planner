@@ -1,34 +1,38 @@
 # LUMA Weddings & Events
 
-LUMA is a premium React/Vite wedding and event planning demo created for the MSPixelPulse portfolio. It presents a fictional Toronto/GTA concept studio with destination capabilities, complete service architecture, editorial content, a cinematic media system and an honest frontend-only inquiry experience.
+LUMA is a premium React/Vite wedding and event planning demo created for the MSPixelPulse portfolio. It presents a fictional Toronto/GTA concept studio with destination capabilities, a complete industry architecture, editorial content, a cinematic media system and secure server-side form foundations.
 
 ## Live site
 
-- Production: https://luma-weddings-events.vercel.app/
+- Production: https://luma-event-planning.vercel.app/
+- Legacy alias: https://luma-weddings-events.vercel.app/
 - Repository: https://github.com/MSPixelPulseAgency/wedding-planner
 
 ## Experience highlights
 
 - Cinematic, muted hero video with a reduced-motion image fallback
 - Reusable liquid-glass navigation, panels and mobile menu
-- Seven dedicated planning, design and production service pages
-- Filterable editorial portfolio with an accessible keyboard lightbox
+- 10 wedding, 17 event, 16 production-service and five location planning routes
+- Searchable 70-image gallery and filterable portfolio with accessible keyboard lightboxes
+- Eight-video motion gallery with reduced-motion fallbacks
 - Five-stage interactive planning experience
 - Transparent demo investment guidance and project-fit prompts
 - Clearly labelled sample client stories
 - Ten long-form planning journal routes
 - Animated accessible FAQ accordions
-- Three-step inquiry that validates locally and prepares an email without pretending to submit data
-- Custom legal pages and 404 experience
-- Responsive layouts from 360px through 1440px+
+- Three-step inquiry with validated Resend delivery and an honest prepared-email fallback
+- Private feedback flow designed for Supabase storage and Resend notification
+- Custom privacy, terms, accessibility and 404 experiences
+- Responsive layouts from 360px through 1920px
 
 ## Routes
 
-The production build creates 32 route-specific HTML entry documents with unique titles, descriptions, canonicals, Open Graph metadata and JSON-LD. Core routes include:
+The production build creates 89 route-specific HTML entry documents with unique titles, descriptions, canonicals, Open Graph metadata and JSON-LD. Core routes include:
 
 - `/`, `/about`, `/experience`, `/pricing`, `/reviews`, `/faq`, `/contact`
-- `/services` plus seven dedicated service routes
+- `/weddings`, `/events`, `/services`, `/locations` and 48 dedicated industry routes
 - `/portfolio`, `/portfolio/weddings`, `/portfolio/destination`, `/portfolio/corporate`
+- `/gallery`, `/videos`, `/feedback`, `/accessibility`
 - `/journal` plus ten editorial guide routes
 - `/privacy`, `/terms`, custom `/404`
 
@@ -66,7 +70,7 @@ npm run check:seo
 
 ## Media
 
-The project includes 46 locally hosted WebP photographs and eight short muted MP4 clips. Source pages and creator credits are recorded in [CREDITS.md](./CREDITS.md). Media was sourced from Pexels under the Pexels licence and optimized for this demonstration.
+The project includes 70 locally hosted WebP photographs and eight short muted MP4 clips. Source pages and creator credits are recorded in [CREDITS.md](./CREDITS.md). Media was sourced from Pexels under the Pexels licence and optimized for this demonstration.
 
 Run `npm run media` only when intentionally rebuilding the local media set. The script downloads the documented sources and transcodes them with `cwebp` and `ffmpeg`.
 
@@ -78,9 +82,10 @@ Contact placeholders:
 
 - `hello@mspixelpulse.com`
 - `+1 (000) 000-0000`
-- Social links and WhatsApp: intentionally unconfigured
+- WhatsApp: `+1 365-883-0338`
+- Social links: intentionally unconfigured
 
-Before adapting this project for a real client, replace all business details, connect an approved form endpoint, obtain business-specific privacy/legal review and verify every public claim.
+Before adapting this project for a real client, replace all business details, configure the documented Resend/Supabase environment variables, obtain business-specific privacy/legal review and verify every public claim. See [production form integrations](./docs/production-integrations.md).
 
 ## Deployment
 

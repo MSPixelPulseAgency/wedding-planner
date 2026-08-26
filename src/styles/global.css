@@ -49,13 +49,17 @@ p { color: var(--muted); }
 @media (max-width: 600px) {
   :root { --container: min(100% - 28px, 1240px); }
   html { scroll-padding-top: 78px; }
-  body { font-size: 15px; }
+  body { font-size: 16px; }
   h1 { font-size: clamp(3rem, 15vw, 4.7rem); }
   h2 { font-size: clamp(2.45rem, 12vw, 3.75rem); }
   .section { padding: 78px 0; }
   .button { width: 100%; min-height: 50px; }
   .button-row { width: 100%; }
   .eyebrow { margin-bottom: 16px; }
+}
+
+@media (max-width: 700px) {
+  .media-frame img { object-position: var(--image-position-mobile, var(--image-position, center)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

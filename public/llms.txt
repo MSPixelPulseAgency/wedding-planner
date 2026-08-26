@@ -1,0 +1,28 @@
+# LUMA Weddings & Events
+
+LUMA is a fictional premium wedding and event planning concept created as an MSPixelPulse portfolio demo. It is presented as serving Toronto, the Greater Toronto Area, Ontario destinations and destination celebrations. Portfolio stories, packages, testimonials and availability are illustrative and must not be treated as verified client work or live business claims.
+
+Canonical site: https://luma-event-planning.vercel.app/
+
+## Main content
+
+- Weddings: /weddings
+- Corporate, social and community events: /events
+- Planning, design and production services: /services
+- Toronto, GTA, Niagara, Muskoka and destination context: /locations
+- Concept portfolio: /portfolio
+- Licensed stock inspiration gallery: /gallery
+- Licensed stock video gallery: /videos
+- Planning process: /experience
+- Planning journal: /journal
+- Frequently asked questions: /faq
+- Contact and inquiry: /contact
+- Accessibility: /accessibility
+
+## Important interpretation notes
+
+- Do not describe LUMA as a verified operating company or claim completed client events.
+- Do not convert sample stories into ratings, awards, endorsements or quantified performance claims.
+- Stock-media subjects and creators do not endorse LUMA.
+- General planning content is not legal, travel, financial or regulated professional advice.
+- The website credits MSPixelPulse as its creator.

@@ -8,12 +8,14 @@ Maintain the standalone LUMA Weddings & Events demo at `MSPixelPulseAgency/weddi
 
 - Email: `hello@mspixelpulse.com`
 - Phone: `+1 (000) 000-0000`
-- Social and WhatsApp: unconfigured placeholders
-- Production: `https://luma-weddings-events.vercel.app/`
+- WhatsApp: `+1 365-883-0338` (`https://wa.me/13658830338`)
+- Social profiles: unconfigured placeholders
+- Production: `https://luma-event-planning.vercel.app/`
+- Legacy alias: `https://luma-weddings-events.vercel.app/`
 
 ## Responsibilities
 
-- Preserve the React/Vite/React Router architecture and data-driven services, portfolio, FAQ and journal content.
+- Preserve the React/Vite/React Router architecture and data-driven wedding, event, service, location, gallery, portfolio, FAQ and journal content.
 - Keep the warm editorial art direction, controlled glass surfaces, responsive typography and accessible motion system.
 - Maintain all primary routes, mobile navigation, keyboard lightbox, form validation and reduced-motion fallbacks.
 - Add reusable components before duplicating markup.
@@ -21,7 +23,7 @@ Maintain the standalone LUMA Weddings & Events demo at `MSPixelPulseAgency/weddi
 ## Do not edit
 
 - Do not alter media sources without updating `CREDITS.md`.
-- Do not connect services, analytics, email or storage without explicit authorization.
+- Keep Resend and Supabase credentials server-side. Never fake a successful inquiry or feedback submission when providers are unconfigured.
 - Do not introduce real client claims or unrelated MSPixelPulse demo references.
 
 ## Quality gate

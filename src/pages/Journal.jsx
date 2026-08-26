@@ -28,7 +28,7 @@ export function JournalArticle() {
   const breadcrumbs = [{ label: 'Home', to: '/' }, { label: 'Journal', to: '/journal' }, { label: post.title, to: path }]
   return (
     <article className="article-page">
-      <SEO title={`${post.title} | LUMA Journal`} description={post.dek} path={path} type="article" image={`https://luma-weddings-events.vercel.app${post.image}`} breadcrumbs={breadcrumbs} article />
+      <SEO title={`${post.title} | LUMA Journal`} description={post.dek} path={path} type="article" image={`https://luma-event-planning.vercel.app${post.image}`} breadcrumbs={breadcrumbs} article />
       <header className="article-header container"><Breadcrumbs items={breadcrumbs} /><p className="eyebrow">{post.category}</p><h1>{post.title}</h1><p className="article-header__dek">{post.dek}</p><span><Clock size={15} aria-hidden="true" />{post.readTime}</span></header>
       <div className="container article-hero"><MediaImage src={post.image} alt={`${post.title} article feature`} eager /></div>
       <div className="container article-layout">

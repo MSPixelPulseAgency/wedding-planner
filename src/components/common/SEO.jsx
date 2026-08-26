@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const siteUrl = 'https://luma-weddings-events.vercel.app'
+const siteUrl = 'https://luma-event-planning.vercel.app'
 const defaultImage = `${siteUrl}/og-luma.jpg`
 
 export function SEO({ title, description, path = '/', type = 'website', image = defaultImage, breadcrumbs = [], article }) {

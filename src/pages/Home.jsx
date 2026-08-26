@@ -9,12 +9,19 @@ import { Reveal } from '../components/common/Reveal'
 import { SectionHeading } from '../components/common/SectionHeading'
 import { PortfolioGallery } from '../components/sections/PortfolioGallery'
 import { FAQAccordion } from '../components/common/FAQAccordion'
-import { faqGroups, image, journalPosts, portfolioItems, processSteps, services, styleOptions, testimonials, videos } from '../data/siteData'
+import { faqGroups, image, journalPosts, portfolioItems, processSteps, styleOptions, testimonials, videos } from '../data/siteData'
+import { eventOfferings, serviceOfferings, weddingOfferings } from '../data/industryData'
 
 const strengths = [
   'One clear point of contact', 'Planning built around your priorities', 'Thoughtful vendor coordination',
   'Detailed timelines and logistics', 'Design consistency from invitation to room', 'Calm event-day leadership',
 ]
+const planningLanes = [
+  { label: 'Weddings', to: '/weddings', items: weddingOfferings.slice(0, 2) },
+  { label: 'Events', to: '/events', items: eventOfferings.slice(0, 2) },
+  { label: 'Production', to: '/services', items: serviceOfferings.slice(0, 2) },
+]
+const featuredPlanning = planningLanes.flatMap((lane) => lane.items.map((item) => ({ ...item, lane: lane.label, to: `/${lane.label === 'Production' ? 'services' : lane.label.toLowerCase()}/${item.slug}` })))
 
 export default function Home() {
   const [activeStyle, setActiveStyle] = useState(styleOptions[0])
@@ -39,9 +46,7 @@ export default function Home() {
       </section>
 
       <div className="container intro-strip glass-surface">
-        {services.slice(0, 4).map((service, index) => (
-          <Link key={service.slug} to={`/services/${service.slug}`}><span>0{index + 1}</span>{service.cardTitle}<ArrowUpRight size={16} aria-hidden="true" /></Link>
-        ))}
+        {[['Weddings', '/weddings'], ['Events', '/events'], ['Services', '/services'], ['Gallery', '/gallery']].map(([label, to], index) => <Link key={to} to={to}><span>0{index + 1}</span>{label}<ArrowUpRight size={16} aria-hidden="true" /></Link>)}
       </div>
 
       <section className="section editorial-intro" id="introduction">
@@ -62,14 +67,14 @@ export default function Home() {
 
       <section className="section section--ivory services-showcase">
         <div className="container">
-          <Reveal><SectionHeading eyebrow="Ways to work together" title="Planning that meets you where you are." text="From a complete planning partnership to focused coordination or corporate production, every scope begins with clear responsibility." /></Reveal>
+          <Reveal><SectionHeading eyebrow="Weddings, events & production" title="Planning that meets you where you are." text="Explore 43 focused planning paths across weddings, corporate and social events, creative direction and on-site production." action={<Link className="text-link" to="/services">Explore all services <ArrowRight size={17} aria-hidden="true" /></Link>} /></Reveal>
           <div className="service-grid">
-            {services.map((service, index) => (
-              <Reveal as="article" className={`service-card service-card--${index % 3}`} key={service.slug} delay={(index % 3) * 0.06}>
-                <Link to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
-                  <MediaImage src={service.cardImage} alt={`${service.cardTitle} concept by LUMA`} />
+            {featuredPlanning.map((service, index) => (
+              <Reveal as="article" className={`service-card service-card--${index % 3}`} key={`${service.lane}-${service.slug}`} delay={(index % 3) * 0.06}>
+                <Link to={service.to} aria-label={`Explore ${service.title}`}>
+                  <MediaImage src={service.hero} alt={`${service.title} planning inspiration`} />
                   <span className="service-card__number">0{index + 1}</span>
-                  <div className="service-card__content"><h3>{service.cardTitle}</h3><p>{service.description}</p><span>Explore service <ArrowUpRight size={16} aria-hidden="true" /></span></div>
+                  <div className="service-card__content"><small>{service.lane}</small><h3>{service.title}</h3><p>{service.summary}</p><span>Explore service <ArrowUpRight size={16} aria-hidden="true" /></span></div>
                 </Link>
               </Reveal>
             ))}
@@ -85,7 +90,7 @@ export default function Home() {
 
       <section className="section featured-work">
         <div className="container">
-          <Reveal><SectionHeading eyebrow="Selected stories" title="Celebrations with a point of view." text="Conceptual portfolio stories presented to demonstrate visual direction, planning range and guest-experience thinking." action={<Link className="text-link" to="/portfolio">View the portfolio <ArrowRight size={17} aria-hidden="true" /></Link>} /></Reveal>
+          <Reveal><SectionHeading eyebrow="Selected stories" title="Celebrations with a point of view." text="Conceptual portfolio stories presented to demonstrate visual direction, planning range and guest-experience thinking." action={<Link className="text-link" to="/gallery">Explore 70 images <ArrowRight size={17} aria-hidden="true" /></Link>} /></Reveal>
           <PortfolioGallery items={portfolioItems} limit={8} />
         </div>
       </section>

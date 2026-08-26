@@ -8,6 +8,11 @@
   --rose: #cfa8a5;
   --sage: #aab6a0;
   --taupe: #b7a89a;
+  --coral: #d77b66;
+  --saffron: #d99a36;
+  --aqua: #78aaa4;
+  --lavender: #9b8ab6;
+  --blue: #486d8c;
   --white: #ffffff;
   --muted: #6c6d68;
   --line: rgba(23, 23, 21, 0.14);
@@ -20,7 +25,7 @@
   --radius-lg: 36px;
   --radius-pill: 999px;
   --container: min(1240px, calc(100vw - 40px));
-  --serif: "Cormorant Garamond", Georgia, serif;
+  --serif: "Fraunces", Georgia, serif;
   --sans: "Manrope", system-ui, sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }

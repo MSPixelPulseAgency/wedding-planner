@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { ArrowLeft, ArrowRight, Check, Mail } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, LoaderCircle, Mail } from 'lucide-react'
 import { contact } from '../../data/siteData'
 
 const eventTypes = ['Wedding', 'Destination Wedding', 'Engagement', 'Anniversary', 'Birthday', 'Shower', 'Corporate Event', 'Gala', 'Brand Event', 'Private Dinner', 'Other']
@@ -8,6 +8,7 @@ const initial = {
   firstName: '', lastName: '', email: '', phone: '', preferredContact: 'Email',
   eventType: '', eventDate: '', dateFlexibility: '', location: '', guestCount: '',
   service: '', budget: '', referral: '', vision: '', consent: false,
+  website: '',
 }
 
 function validateStep(step, data) {
@@ -34,6 +35,7 @@ export function InquiryForm() {
   const [data, setData] = useState(initial)
   const [errors, setErrors] = useState({})
   const [prepared, setPrepared] = useState(false)
+  const [status, setStatus] = useState({ state: 'idle', message: '' })
   const progress = ((step + 1) / 3) * 100
 
   const mailto = useMemo(() => {
@@ -63,11 +65,22 @@ export function InquiryForm() {
     if (!Object.keys(nextErrors).length) setStep((current) => Math.min(2, current + 1))
   }
 
-  const prepare = (event) => {
+  const prepare = async (event) => {
     event.preventDefault()
     const nextErrors = validateStep(2, data)
     setErrors(nextErrors)
-    if (!Object.keys(nextErrors).length) setPrepared(true)
+    if (Object.keys(nextErrors).length) return
+    setStatus({ state: 'loading', message: 'Sending your inquiry securely…' })
+    try {
+      const response = await fetch('/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(result.message || 'The secure inquiry service is unavailable.')
+      setPrepared(false)
+      setStatus({ state: 'success', message: result.message || 'Your inquiry was sent securely.' })
+    } catch (error) {
+      setPrepared(true)
+      setStatus({ state: 'error', message: error.message })
+    }
   }
 
   const fieldError = (name) => errors[name] ? <span className="field-error" id={`${name}-error`} role="alert">{errors[name]}</span> : null
@@ -118,21 +131,24 @@ export function InquiryForm() {
           <div className="form-grid">
             <label>How did you hear about us?<input name="referral" value={data.referral} onChange={update} /></label>
             <label>Your vision *<textarea name="vision" rows="7" value={data.vision} onChange={update} placeholder="Share what matters most, what has already been decided, and where you want support." {...errorProps('vision')} />{fieldError('vision')}</label>
-            <label className="checkbox-label"><input type="checkbox" name="consent" checked={data.consent} onChange={update} {...errorProps('consent')} /><span>I agree that these details may be used to respond to my inquiry. This demo does not store or submit the form.</span></label>
+            <label className="checkbox-label"><input type="checkbox" name="consent" checked={data.consent} onChange={update} {...errorProps('consent')} /><span>I agree that these details may be sent securely and used to respond to my inquiry. LUMA does not sell inquiry information.</span></label>
             {fieldError('consent')}
+            <label className="honey-field" aria-hidden="true">Website<input name="website" tabIndex="-1" autoComplete="off" value={data.website} onChange={update} /></label>
           </div>
         </fieldset>
       )}
 
       <div className="inquiry-form__actions">
         {step > 0 && <button className="button button--ghost" type="button" onClick={() => { setStep((current) => current - 1); setPrepared(false) }}><ArrowLeft size={17} aria-hidden="true" />Back</button>}
-        {step < 2 ? <button className="button button--dark" type="button" onClick={next}>Continue<ArrowRight size={17} aria-hidden="true" /></button> : <button className="button button--dark" type="submit">Prepare email<Mail size={17} aria-hidden="true" /></button>}
+        {step < 2 ? <button className="button button--dark" type="button" onClick={next}>Continue<ArrowRight size={17} aria-hidden="true" /></button> : <button className="button button--dark" type="submit" disabled={status.state === 'loading'}>{status.state === 'loading' ? <LoaderCircle className="spin" size={17} aria-hidden="true" /> : <Mail size={17} aria-hidden="true" />}Send inquiry</button>}
       </div>
+
+      {status.message && <p className={`form-status form-status--${status.state}`} role={status.state === 'error' ? 'alert' : 'status'}>{status.message}</p>}
 
       {prepared && (
         <div className="inquiry-form__prepared" role="status">
           <Check aria-hidden="true" />
-          <div><strong>Your email is ready.</strong><p>No data has been sent or stored. Use the link below to open your email app and review the message.</p><a className="button button--dark" href={mailto}>Open prepared email</a></div>
+          <div><strong>Use the email fallback.</strong><p>The secure delivery service did not confirm receipt. Open your email app, review the prepared message and send it directly.</p><a className="button button--dark" href={mailto}>Open prepared email</a></div>
         </div>
       )}
     </form>

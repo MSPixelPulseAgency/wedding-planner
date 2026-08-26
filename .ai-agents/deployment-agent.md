@@ -6,7 +6,8 @@
 - GitHub: `MSPixelPulseAgency/wedding-planner`
 - Branch: `main`
 - Vercel project: `wedding-planner`
-- Canonical production URL: `https://luma-weddings-events.vercel.app/`
+- Canonical production URL: `https://luma-event-planning.vercel.app/`
+- Legacy alias retained: `https://luma-weddings-events.vercel.app/`
 
 Confirm these identifiers and inspect `.vercel/project.json` before any future deployment. Never deploy a similarly named checkout.
 

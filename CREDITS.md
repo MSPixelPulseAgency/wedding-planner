@@ -54,6 +54,30 @@ Assets are locally hosted, resized or transcoded and used only as stock imagery 
 | `black-tie-wedding-portrait.webp` | SOUTH SUNTRESO SDA CHURCH | [Pexels photo 37055942](https://www.pexels.com/photo/37055942/) |
 | `corporate-gala-hall.webp` | Ernesto RƎIƎZ | [Pexels photo 35042459](https://www.pexels.com/photo/35042459/) |
 | `african-wedding-portrait.webp` | Andrew Ssenyonjo | [Pexels photo 10899419](https://www.pexels.com/photo/10899419/) |
+| `corporate-toast.webp` | Pavel Danilyuk | [Pexels photo 6405661](https://www.pexels.com/photo/6405661/) |
+| `gala-banquet.webp` | Andrew Patrick Photo | [Pexels photo 14636319](https://www.pexels.com/photo/14636319/) |
+| `conference-audience.webp` | Atlantic Ambience | [Pexels photo 9275222](https://www.pexels.com/photo/9275222/) |
+| `networking-room.webp` | Pavel Danilyuk | [Pexels photo 8761636](https://www.pexels.com/photo/8761636/) |
+| `event-hall-classic.webp` | Matheus Bertelli | [Pexels photo 16985127](https://www.pexels.com/photo/16985127/) |
+| `event-hall-modern.webp` | Matheus Bertelli | [Pexels photo 16985187](https://www.pexels.com/photo/16985187/) |
+| `conference-details.webp` | Pavel Danilyuk | [Pexels photo 8761738](https://www.pexels.com/photo/8761738/) |
+| `conference-conversation.webp` | Pavel Danilyuk | [Pexels photo 8761782](https://www.pexels.com/photo/8761782/) |
+| `ring-exchange-closeup.webp` | Önder Ceneviz | [Pexels photo 18706408](https://www.pexels.com/photo/18706408/) |
+| `wedding-rings-hands.webp` | Deanna Arroyo | [Pexels photo 10689262](https://www.pexels.com/photo/10689262/) |
+| `rings-invitation.webp` | Bruno Mattos | [Pexels photo 30232952](https://www.pexels.com/photo/30232952/) |
+| `jewish-ring-ceremony.webp` | Ixo Diseño y Publicidad | [Pexels photo 31416469](https://www.pexels.com/photo/31416469/) |
+| `sparkler-celebration.webp` | Pedro Paiva | [Pexels photo 30467895](https://www.pexels.com/photo/30467895/) |
+| `senior-birthday.webp` | RDNE Stock project | [Pexels photo 7867443](https://www.pexels.com/photo/7867443/) |
+| `anniversary-couple.webp` | SAMPARK FILMS | [Pexels photo 32083132](https://www.pexels.com/photo/32083132/) |
+| `birthday-candles.webp` | Ezequiel Campos | [Pexels photo 20346916](https://www.pexels.com/photo/20346916/) |
+| `keynote-speaker.webp` | Matheus Bertelli | [Pexels photo 34774347](https://www.pexels.com/photo/34774347/) |
+| `conference-presentation.webp` | Matheus Bertelli | [Pexels photo 29708258](https://www.pexels.com/photo/29708258/) |
+| `conference-crowd.webp` | BBSO | [Pexels photo 20733081](https://www.pexels.com/photo/20733081/) |
+| `conference-stage.webp` | Matheus Bertelli | [Pexels photo 29708255](https://www.pexels.com/photo/29708255/) |
+| `toronto-waterfront.webp` | Jeffrey Eisen | [Pexels photo 13420120](https://www.pexels.com/photo/13420120/) |
+| `toronto-skyline.webp` | Mateusz Walendzik | [Pexels photo 13653632](https://www.pexels.com/photo/13653632/) |
+| `toronto-night.webp` | Mateusz Walendzik | [Pexels photo 17796162](https://www.pexels.com/photo/17796162/) |
+| `toronto-sunset.webp` | Héctor Berganza | [Pexels photo 25696388](https://www.pexels.com/photo/25696388/) |
 
 ## Videos
 

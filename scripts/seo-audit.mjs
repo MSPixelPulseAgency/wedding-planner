@@ -1,6 +1,6 @@
 import { access, readFile } from 'node:fs/promises'
 import path from 'node:path'
-import { routeMeta } from '../src/data/siteData.js'
+import { allRouteMeta as routeMeta } from '../src/data/routeMeta.js'
 
 const distDir = path.resolve(import.meta.dirname, '..', 'dist')
 const issues = []

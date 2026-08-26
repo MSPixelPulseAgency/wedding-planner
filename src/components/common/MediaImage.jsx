@@ -1,9 +1,12 @@
 import { useState } from 'react'
 
-export function MediaImage({ src, alt, className = '', eager = false, position, sizes = '100vw' }) {
+export function MediaImage({ src, alt, className = '', eager = false, position, mobilePosition, sizes = '100vw' }) {
   const [failed, setFailed] = useState(false)
   return (
-    <span className={`media-frame ${className}${failed ? ' media-frame--failed' : ''}`} style={{ '--image-position': position || 'center' }}>
+    <span
+      className={`media-frame ${className}${failed ? ' media-frame--failed' : ''}`}
+      style={{ '--image-position': position || 'center', '--image-position-mobile': mobilePosition || position || 'center' }}
+    >
       {!failed && (
         <img
           src={src}
@@ -12,6 +15,8 @@ export function MediaImage({ src, alt, className = '', eager = false, position, 
           fetchPriority={eager ? 'high' : 'auto'}
           decoding="async"
           sizes={sizes}
+          width="1600"
+          height="1200"
           onError={() => setFailed(true)}
         />
       )}
