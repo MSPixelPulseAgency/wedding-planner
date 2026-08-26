@@ -7,7 +7,7 @@ Route metadata is exported from `src/data/siteData.js`. `scripts/postbuild.mjs` 
 ## Requirements
 
 - One unique title, description and meaningful H1 per public route
-- Canonical URLs rooted at `https://wedding-planner.vercel.app`
+- Canonical URLs rooted at `https://luma-weddings-events.vercel.app`
 - Descriptive alt text and crawlable internal links
 - Accurate Organization, WebSite, WebPage, Breadcrumb and BlogPosting data where appropriate
 - No aggregate ratings, fabricated business history, fake Event objects or unsupported LocalBusiness address data

@@ -9,7 +9,7 @@ Maintain the standalone LUMA Weddings & Events demo at `MSPixelPulseAgency/weddi
 - Email: `hello@mspixelpulse.com`
 - Phone: `+1 (000) 000-0000`
 - Social and WhatsApp: unconfigured placeholders
-- Production: `https://wedding-planner.vercel.app/`
+- Production: `https://luma-weddings-events.vercel.app/`
 
 ## Responsibilities
 

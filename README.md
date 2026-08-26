@@ -4,7 +4,7 @@ LUMA is a premium React/Vite wedding and event planning demo created for the MSP
 
 ## Live site
 
-- Production: https://wedding-planner.vercel.app/
+- Production: https://luma-weddings-events.vercel.app/
 - Repository: https://github.com/MSPixelPulseAgency/wedding-planner
 
 ## Experience highlights

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wedding-planner.vercel.app/sitemap.xml
+Sitemap: https://luma-weddings-events.vercel.app/sitemap.xml

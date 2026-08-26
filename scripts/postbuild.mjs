@@ -6,7 +6,7 @@ import { routeMeta } from '../src/data/siteData.js'
 const projectRoot = path.resolve(import.meta.dirname, '..')
 const distDir = path.join(projectRoot, 'dist')
 const baseHtml = await readFile(path.join(distDir, 'index.html'), 'utf8')
-const siteUrl = 'https://wedding-planner.vercel.app'
+const siteUrl = 'https://luma-weddings-events.vercel.app'
 const escapeHtml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;')
 
 function buildHtml(route, title, description) {
