@@ -1,0 +1,26 @@
+:root {
+  --porcelain: #f8f6f2;
+  --ivory: #fffdf9;
+  --ink: #171715;
+  --olive: #272a25;
+  --champagne: #d7b98e;
+  --champagne-deep: #8f6b3d;
+  --rose: #cfa8a5;
+  --sage: #aab6a0;
+  --taupe: #b7a89a;
+  --white: #ffffff;
+  --muted: #6c6d68;
+  --line: rgba(23, 23, 21, 0.14);
+  --glass-light: rgba(255, 253, 249, 0.76);
+  --glass-dark: rgba(31, 34, 29, 0.76);
+  --shadow-soft: 0 24px 80px rgba(34, 31, 27, 0.12);
+  --shadow-card: 0 18px 50px rgba(34, 31, 27, 0.1);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-pill: 999px;
+  --container: min(1240px, calc(100vw - 40px));
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

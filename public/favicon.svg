@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">LUMA monogram</title>
+  <rect width="64" height="64" rx="20" fill="#272a25"/>
+  <path d="M21 15v30h23" fill="none" stroke="#f8f6f2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M43 18c-9-7-18 0-15 7 3 8 16 4 16 14 0 7-9 11-17 6" fill="none" stroke="#d7b98e" stroke-width="2" stroke-linecap="round" opacity=".95"/>
+</svg>

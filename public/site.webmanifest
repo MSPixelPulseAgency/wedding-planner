@@ -1,0 +1,10 @@
+{
+  "name": "LUMA Weddings & Events",
+  "short_name": "LUMA",
+  "description": "A concept wedding and event planning studio serving Toronto, the GTA and destination celebrations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f6f2",
+  "theme_color": "#272a25",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
