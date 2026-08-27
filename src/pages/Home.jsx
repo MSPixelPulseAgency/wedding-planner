@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Check, Mail, MapPin, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check, Mail, MapPin, Quote, Sparkles, UserRound } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { SEO } from '../components/common/SEO'
 import { CinematicVideo } from '../components/common/CinematicVideo'
@@ -146,7 +146,22 @@ export default function Home() {
         <div className="container">
           <Reveal><SectionHeading eyebrow="Demo client stories" title="The experience, in their words." text="Clearly labelled sample stories show how service could feel without presenting fictional reviews as verified testimonials." /></Reveal>
           <div className="testimonial-track">
-            {testimonials.slice(0, 5).map((story) => <Reveal as="blockquote" key={story.name} className="testimonial-card"><p>“{story.quote}”</p><cite>{story.name}</cite></Reveal>)}
+            {testimonials.slice(0, 5).map((story) => {
+              const [reviewerName, eventType] = story.name.split(' · ')
+              return (
+                <Reveal as="blockquote" key={story.name} className="testimonial-card">
+                  <div className="testimonial-card__header">
+                    <span className="testimonial-card__avatar" aria-hidden="true"><UserRound size={19} /></span>
+                    <cite><strong>{reviewerName}</strong><span>{eventType}</span></cite>
+                  </div>
+                  <div className="testimonial-card__quote">
+                    <Quote className="testimonial-card__quote-mark testimonial-card__quote-mark--open" aria-hidden="true" />
+                    <p>{story.quote}</p>
+                    <Quote className="testimonial-card__quote-mark testimonial-card__quote-mark--close" aria-hidden="true" />
+                  </div>
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </section>
