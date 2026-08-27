@@ -4,6 +4,7 @@ import { SEO } from '../components/common/SEO'
 import { PageHero } from '../components/common/PageHero'
 import { MediaImage } from '../components/common/MediaImage'
 import { galleryCategories, galleryMedia } from '../data/mediaLibrary'
+import { matchesSearch } from '../data/discoveryData'
 import { image } from '../data/siteData'
 
 export default function Gallery() {
@@ -17,7 +18,7 @@ export default function Gallery() {
   const breadcrumbs = [{ label: 'Home', to: '/' }, { label: 'Gallery', to: '/gallery' }]
   const filtered = useMemo(() => galleryMedia.filter((item) => {
     const categoryMatch = category === 'All' || item.category === category
-    const queryMatch = `${item.title} ${item.alt} ${item.category}`.toLowerCase().includes(query.trim().toLowerCase())
+    const queryMatch = matchesSearch(item, query, ['title', 'alt', 'category'])
     return categoryMatch && queryMatch
   }), [category, query])
   const activeIndex = active ? filtered.findIndex((item) => item.id === active.id) : -1

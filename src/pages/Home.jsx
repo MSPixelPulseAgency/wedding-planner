@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Mail } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check, Mail, MapPin, Sparkles } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { SEO } from '../components/common/SEO'
 import { CinematicVideo } from '../components/common/CinematicVideo'
 import { MediaImage } from '../components/common/MediaImage'
 import { Reveal } from '../components/common/Reveal'
+import { SiteSearch } from '../components/common/SiteSearch'
 import { SectionHeading } from '../components/common/SectionHeading'
 import { PortfolioGallery } from '../components/sections/PortfolioGallery'
+import { PublicVideoGrid } from '../components/sections/PublicVideoGrid'
 import { FAQAccordion } from '../components/common/FAQAccordion'
 import { faqGroups, image, journalPosts, portfolioItems, processSteps, styleOptions, testimonials, videos } from '../data/siteData'
 import { eventOfferings, serviceOfferings, weddingOfferings } from '../data/industryData'
@@ -31,18 +33,25 @@ export default function Home() {
     <>
       <SEO title="LUMA Weddings & Events | Toronto Wedding Planner Demo" description="A concept Toronto wedding and event planning studio for thoughtful, beautifully produced celebrations." />
       <section className="home-hero">
-        <CinematicVideo src={videos.reception} poster={image('floral-wedding-interior')} posterAlt="Candlelit wedding reception with layered floral design" className="home-hero__media" priority />
+        <MediaImage src={image('floral-wedding-interior')} alt="Candlelit wedding reception with layered floral design" className="home-hero__background" eager sizes="100vw" />
         <div className="home-hero__shade" />
-        <motion.div className="home-hero__content container" initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-          <p className="eyebrow eyebrow--light">Weddings • Celebrations • Events</p>
-          <h1>Beautifully orchestrated.<br /><em>Entirely yours.</em></h1>
-          <p>LUMA designs and coordinates weddings and events with an editorial eye, thoughtful planning and calm execution.</p>
-          <div className="button-row">
-            <Link className="button button--light" to="/contact">Plan Your Event <ArrowUpRight size={17} aria-hidden="true" /></Link>
-            <Link className="button button--glass" to="/portfolio">Explore Our Work <ArrowRight size={17} aria-hidden="true" /></Link>
-          </div>
-        </motion.div>
-        <a className="scroll-cue" href="#introduction"><span>Scroll to discover</span><ArrowDown size={18} aria-hidden="true" /></a>
+        <div className="home-hero__content container">
+          <motion.div className="home-hero__copy" initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
+            <p className="eyebrow eyebrow--light">Weddings • Events • Celebrations</p>
+            <h1>Beautifully orchestrated.<br /><em>Entirely yours.</em></h1>
+            <p>Planning, design, décor and production for weddings and events across Toronto, the GTA, Canada and select destinations.</p>
+            <div className="button-row">
+              <Link className="button button--light" to="/contact">Plan Your Event <ArrowUpRight size={17} aria-hidden="true" /></Link>
+              <Link className="button button--glass" to="/portfolio">Explore Our Work <ArrowRight size={17} aria-hidden="true" /></Link>
+            </div>
+            <SiteSearch className="home-hero__search" showPopular />
+          </motion.div>
+          <motion.div className="home-hero__video-card" initial={reduceMotion ? false : { opacity: 0, scale: 0.96, x: 24 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: 0.95, delay: reduceMotion ? 0 : 0.12, ease: [0.16, 1, 0.3, 1] }}>
+            <CinematicVideo src={videos.reception} poster={image('modern-candle-tablescape')} posterAlt="Candlelit reception tables prepared for an evening celebration" showControl />
+            <span className="home-hero__media-chip home-hero__media-chip--top"><MapPin size={17} aria-hidden="true" />Toronto + GTA</span>
+            <span className="home-hero__media-chip home-hero__media-chip--bottom"><Sparkles size={17} aria-hidden="true" />Planning • Design • Production</span>
+          </motion.div>
+        </div>
       </section>
 
       <div className="container intro-strip glass-surface">
@@ -95,6 +104,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PublicVideoGrid showAction />
+
       <section className="section section--olive experience-preview">
         <div className="container">
           <Reveal><SectionHeading eyebrow="The planning experience" title="A clear path from possibility to presence." text="The process creates room for creativity because responsibilities, decisions and timing stay visible." /></Reveal>
@@ -135,7 +146,7 @@ export default function Home() {
         <div className="container">
           <Reveal><SectionHeading eyebrow="Demo client stories" title="The experience, in their words." text="Clearly labelled sample stories show how service could feel without presenting fictional reviews as verified testimonials." /></Reveal>
           <div className="testimonial-track">
-            {testimonials.map((story) => <Reveal as="blockquote" key={story.name} className="testimonial-card"><p>“{story.quote}”</p><cite>{story.name}</cite></Reveal>)}
+            {testimonials.slice(0, 5).map((story) => <Reveal as="blockquote" key={story.name} className="testimonial-card"><p>“{story.quote}”</p><cite>{story.name}</cite></Reveal>)}
           </div>
         </div>
       </section>

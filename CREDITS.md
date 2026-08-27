@@ -94,6 +94,16 @@ Assets are locally hosted, resized or transcoded and used only as stock imagery 
 
 ## Other assets
 
-- LUMA wordmark, favicon and interface iconography: original project assets.
+- LUMA wordmark, heart favicon and interface iconography: original project assets.
 - Interface icons: [Lucide](https://lucide.dev/) package.
 - Typography: Cormorant Garamond and Manrope from [Google Fonts](https://fonts.google.com/).
+
+## Official destination video references
+
+These public videos are shown through click-to-load YouTube privacy-enhanced embeds. LUMA does not claim ownership, partnership or endorsement.
+
+| Video | Publisher | Source |
+|---|---|---|
+| `Toronto 100%` | Destination Toronto | [Official YouTube upload](https://www.youtube.com/watch?v=yrutYtQ9Fjg) |
+| `Welcome to Ontario` | Destination Ontario | [Official YouTube upload](https://www.youtube.com/watch?v=mEXL-qouLvY) |
+| `A New Waterfront City Is Coming Into View` | Waterfront Toronto | [Official YouTube upload](https://www.youtube.com/watch?v=m50CmOh7tB4) |

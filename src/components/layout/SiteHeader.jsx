@@ -1,17 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Building2, CalendarHeart, ChevronDown, Compass, Gem, Menu, Sparkles, X } from 'lucide-react'
+import { BookOpen, Building2, CalendarHeart, ChevronDown, CircleHelp, Compass, Gem, Images, LayoutTemplate, Menu, MessageCircleHeart, PlayCircle, Route, Sparkles, X } from 'lucide-react'
 import { Logo } from '../common/Logo'
 import { megaMenuGroups } from '../../data/industryData'
+import { exploreMenuGroups } from '../../data/discoveryData'
 
 const directLinks = [
-  { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Experience', to: '/experience' },
-  { label: 'Journal', to: '/journal' },
   { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
 ]
 const menuIcons = [CalendarHeart, Gem, Building2, Sparkles, Compass]
+const exploreIcons = {
+  portfolio: LayoutTemplate,
+  gallery: Images,
+  videos: PlayCircle,
+  experience: Route,
+  journal: BookOpen,
+  reviews: MessageCircleHeart,
+  faq: CircleHelp,
+}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,6 +28,7 @@ export function SiteHeader() {
   const menuRef = useRef(null)
   const toggleRef = useRef(null)
   const location = useLocation()
+  const exploreActive = exploreMenuGroups.some((group) => group.items.some((item) => location.pathname === item.to || location.pathname.startsWith(`${item.to}/`)))
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -66,7 +74,7 @@ export function SiteHeader() {
         <Logo light={mobileOpen} />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {megaMenuGroups.map((group) => <div className="desktop-nav__group" key={group.key}>
-            <button type="button" aria-expanded={openMenu === group.key} aria-controls={`mega-${group.key}`} onClick={() => setOpenMenu((value) => value === group.key ? null : group.key)}>
+            <button className={location.pathname === group.to || location.pathname.startsWith(`${group.to}/`) ? 'active' : ''} type="button" aria-haspopup="true" aria-expanded={openMenu === group.key} aria-controls={`mega-${group.key}`} onClick={() => setOpenMenu((value) => value === group.key ? null : group.key)}>
               {group.label}<ChevronDown size={15} aria-hidden="true" />
             </button>
             {openMenu === group.key && <div id={`mega-${group.key}`} className="mega-menu glass-surface">
@@ -75,7 +83,19 @@ export function SiteHeader() {
               <Link className="mega-menu__feature" to={group.to}><span>{group.items.length} planning paths</span><strong>Find the scope that fits your event.</strong></Link>
             </div>}
           </div>)}
-          {directLinks.map((link) => <NavLink key={link.to} to={link.to}>{link.label}</NavLink>)}
+          <div className="desktop-nav__group">
+            <button className={exploreActive ? 'active' : ''} type="button" aria-haspopup="true" aria-expanded={openMenu === 'explore'} aria-controls="mega-explore" onClick={() => setOpenMenu((value) => value === 'explore' ? null : 'explore')}>
+              Explore<ChevronDown size={15} aria-hidden="true" />
+            </button>
+            {openMenu === 'explore' && <div id="mega-explore" className="mega-menu mega-menu--explore glass-surface">
+              <div className="mega-menu__intro"><p className="eyebrow">Discover LUMA</p><h2>Inspiration and guidance, in one place.</h2><Link className="text-link" to="/portfolio">Start with the portfolio <ChevronDown size={15} aria-hidden="true" /></Link></div>
+              <div className="explore-menu__groups">
+                {exploreMenuGroups.map((group) => <section key={group.label}><p>{group.label}</p>{group.items.map((item) => { const Icon = exploreIcons[item.icon]; return <Link key={item.to} to={item.to}><Icon size={18} aria-hidden="true" /><span><strong>{item.label}</strong><small>{item.description}</small></span></Link> })}</section>)}
+              </div>
+              <Link className="mega-menu__feature" to="/videos"><span>Motion & place</span><strong>See celebrations—and Toronto—in motion.</strong></Link>
+            </div>}
+          </div>
+          {directLinks.map((link) => <NavLink className={({ isActive }) => isActive ? 'active' : undefined} key={link.to} to={link.to}>{link.label}</NavLink>)}
         </nav>
         <Link className="header-cta" to="/contact">Plan Your Event</Link>
         <button ref={toggleRef} className="menu-toggle" type="button" aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen((value) => !value)}>{mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}</button>
@@ -84,6 +104,7 @@ export function SiteHeader() {
         <div className="mobile-menu__glow" />
         <nav aria-label="Mobile navigation">
           {megaMenuGroups.map((group) => <div className="mobile-menu__group" key={group.key}><button type="button" aria-expanded={openMobileGroup === group.key} onClick={() => setOpenMobileGroup((value) => value === group.key ? null : group.key)}>{group.label}<ChevronDown aria-hidden="true" /></button>{openMobileGroup === group.key && <div><Link to={group.to}>View all {group.label.toLowerCase()}</Link>{group.items.map((item) => <Link key={item.slug} to={`/${group.key}/${item.slug}`}>{item.title}</Link>)}</div>}</div>)}
+          <div className="mobile-menu__group mobile-menu__group--explore"><button type="button" aria-expanded={openMobileGroup === 'explore'} onClick={() => setOpenMobileGroup((value) => value === 'explore' ? null : 'explore')}>Explore<ChevronDown aria-hidden="true" /></button>{openMobileGroup === 'explore' && <div className="mobile-menu__explore">{exploreMenuGroups.map((group) => <section key={group.label}><span>{group.label}</span>{group.items.map((item) => <Link key={item.to} to={item.to}>{item.label}</Link>)}</section>)}</div>}</div>
           <div className="mobile-menu__direct">{directLinks.map((link) => <Link key={link.to} to={link.to}>{link.label}</Link>)}</div>
           <Link className="button button--light mobile-menu__cta" to="/contact">Plan Your Event</Link>
         </nav>

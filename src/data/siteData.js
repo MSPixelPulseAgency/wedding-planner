@@ -155,6 +155,7 @@ export const testimonials = [
   { quote: 'We could be present with our guests because the timeline, vendors and room were already being cared for.', name: 'Sample story · City wedding' },
   { quote: 'The design felt elevated without losing the warmth we wanted. Nothing looked borrowed from somebody else’s event.', name: 'Sample story · Private dinner' },
   { quote: 'Our internal team could focus on speakers and guests while production stayed composed behind the scenes.', name: 'Sample story · Corporate gala' },
+  { quote: 'The weekend felt connected from arrival through the final breakfast, while every gathering still had its own rhythm.', name: 'Sample story · Destination weekend' },
 ]
 
 export const journalPosts = [

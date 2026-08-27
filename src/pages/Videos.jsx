@@ -4,6 +4,7 @@ import { SEO } from '../components/common/SEO'
 import { PageHero } from '../components/common/PageHero'
 import { CinematicVideo } from '../components/common/CinematicVideo'
 import { Reveal } from '../components/common/Reveal'
+import { PublicVideoGrid } from '../components/sections/PublicVideoGrid'
 import { image, videos } from '../data/siteData'
 
 const videoStories = [
@@ -24,6 +25,7 @@ export default function Videos() {
       <SEO title="Wedding & Event Video Gallery | LUMA" description="Explore eight locally hosted wedding, destination, social and corporate event video vignettes used in the LUMA demo." path="/videos" breadcrumbs={breadcrumbs} />
       <PageHero eyebrow="Motion gallery" title="A sense of how the room moves." text="Eight short, locally hosted stock vignettes add atmosphere without autoplaying sound. They are inspiration for this fictional studio, not client work." image={image('conference-presentation')} imageAlt="Speaker on a modern event stage" breadcrumbs={breadcrumbs} />
       <section className="section video-gallery"><div className="container"><div className="video-gallery__grid">{videoStories.map((story, index) => <Reveal as="article" className={index === 0 || index === 5 ? 'video-story video-story--wide' : 'video-story'} key={story.title}><CinematicVideo src={story.src} poster={story.poster} posterAlt={story.alt} /><div><span><Play size={14} aria-hidden="true" />{story.category}</span><h2>{story.title}</h2><p>{story.text}</p></div></Reveal>)}</div></div></section>
+      <PublicVideoGrid />
       <section className="section section--olive video-cta"><div className="container"><p className="eyebrow">Build the atmosphere with intention</p><h2>Let movement, sound and timing serve the guest experience.</h2><Link className="button button--light" to="/contact">Plan your event <ArrowRight size={17} aria-hidden="true" /></Link></div></section>
     </>
   )

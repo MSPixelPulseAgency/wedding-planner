@@ -65,5 +65,5 @@ p { color: var(--muted); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .cinematic-video video { display: none; }
+  .cinematic-video:not(.cinematic-video--controlled) video { display: none; }
 }

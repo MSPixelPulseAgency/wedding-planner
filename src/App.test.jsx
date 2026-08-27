@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { AppRoutes } from './App'
@@ -18,6 +18,34 @@ describe('LUMA routes', () => {
     renderRoute('/')
     expect(await screen.findByRole('heading', { level: 1, name: /Beautifully orchestrated/i })).toBeInTheDocument()
     expect(screen.getAllByRole('link', { name: /Plan Your Event/i }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('combobox', { name: /Search weddings, events, services and inspiration/i })).toBeInTheDocument()
+  })
+
+  it('groups discovery routes inside the Explore navigation menu', async () => {
+    renderRoute('/')
+    fireEvent.click(await screen.findByRole('button', { name: /^Explore$/i }))
+    const exploreMenu = document.getElementById('mega-explore')
+    expect(within(exploreMenu).getAllByRole('link', { name: /Portfolio/i }).length).toBeGreaterThan(0)
+    expect(within(exploreMenu).getAllByRole('link', { name: /Videos|motion/i }).length).toBeGreaterThan(0)
+    expect(within(exploreMenu).getByRole('link', { name: /Reviews/i })).toBeInTheDocument()
+    expect(within(exploreMenu).getByRole('link', { name: /FAQ/i })).toBeInTheDocument()
+  })
+
+  it('navigates to a real route from keyboard search suggestions', async () => {
+    renderRoute('/')
+    const search = await screen.findByRole('combobox', { name: /Search weddings, events, services and inspiration/i })
+    fireEvent.change(search, { target: { value: 'South Asian Wedding' } })
+    expect(await screen.findByRole('option', { name: /South Asian Weddings/i })).toBeInTheDocument()
+    fireEvent.keyDown(search, { key: 'ArrowDown' })
+    fireEvent.keyDown(search, { key: 'Enter' })
+    expect(await screen.findByRole('heading', { level: 1, name: 'South Asian Weddings' })).toBeInTheDocument()
+  })
+
+  it('defers official YouTube players until a visitor requests one', async () => {
+    renderRoute('/')
+    expect(document.querySelector('iframe')).not.toBeInTheDocument()
+    fireEvent.click(await screen.findByRole('button', { name: /Load Toronto 100% from Destination Toronto/i }))
+    expect(await screen.findByTitle(/Toronto 100% — Destination Toronto/i)).toBeInTheDocument()
   })
 
   it('renders a direct service route with a meaningful heading', async () => {
