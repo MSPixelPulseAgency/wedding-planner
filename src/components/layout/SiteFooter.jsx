@@ -30,8 +30,7 @@ export function SiteFooter() {
       </div>
       <div className="container site-footer__bottom">
         <p>© 2026 LUMA Weddings &amp; Events. Demo concept.</p>
-        <div><Link to="/privacy">Privacy</Link><Link to="/terms">Terms</Link><Link to="/accessibility">Accessibility</Link></div>
-        <a href="https://mspixelpulse.com/" target="_blank" rel="noopener noreferrer">Website by MSPixelPulse <ArrowUpRight size={14} aria-hidden="true" /></a>
+        <div className="site-footer__bottom-links"><Link to="/privacy">Privacy</Link><Link to="/terms">Terms</Link><Link to="/accessibility">Accessibility</Link><a href="https://mspixelpulse.com/" target="_blank" rel="noopener noreferrer">Website by MSPixelPulse</a></div>
       </div>
     </footer>
   )

@@ -3,8 +3,8 @@ const video = (name) => `/media/videos/${name}.mp4`
 
 export const contact = {
   email: 'hello@mspixelpulse.com',
-  phoneDisplay: '+1 (000) 000-0000',
-  phoneHref: '+10000000000',
+  phoneDisplay: '+1 365-883-0338',
+  phoneHref: '+13658830338',
   serviceArea: 'Toronto, the GTA & destination celebrations',
 }
 

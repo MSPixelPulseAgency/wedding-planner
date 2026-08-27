@@ -7,10 +7,10 @@ import { Reveal } from '../components/common/Reveal'
 import { contact, image } from '../data/siteData'
 
 const contactCards = [
-  { icon: Mail, title: 'Email', value: contact.email, href: `mailto:${contact.email}`, note: 'Demo agency contact placeholder' },
-  { icon: Phone, title: 'Phone', value: contact.phoneDisplay, href: `tel:${contact.phoneHref}`, note: 'Placeholder number—not a working LUMA line' },
-  { icon: MapPin, title: 'Service area', value: 'Toronto, GTA & destination', note: 'No physical office address is claimed' },
+  { icon: Mail, title: 'Email', value: contact.email, href: `mailto:${contact.email}`, note: 'MSPixelPulse demo contact email' },
+  { icon: Phone, title: 'Phone', value: contact.phoneDisplay, href: `tel:${contact.phoneHref}`, note: 'Direct phone contact' },
   { icon: MessageCircle, title: 'WhatsApp', value: '+1 365-883-0338', href: 'https://wa.me/13658830338', note: 'Opens a direct WhatsApp conversation' },
+  { icon: MapPin, title: 'Service area', value: 'Toronto, GTA & destination', note: 'No physical office address is claimed' },
 ]
 
 export default function Contact() {

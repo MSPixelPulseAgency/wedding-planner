@@ -47,7 +47,7 @@ export default function Home() {
             <SiteSearch className="home-hero__search" showPopular />
           </motion.div>
           <motion.div className="home-hero__video-card" initial={reduceMotion ? false : { opacity: 0, scale: 0.96, x: 24 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: 0.95, delay: reduceMotion ? 0 : 0.12, ease: [0.16, 1, 0.3, 1] }}>
-            <CinematicVideo src={videos.reception} poster={image('modern-candle-tablescape')} posterAlt="Candlelit reception tables prepared for an evening celebration" showControl />
+            <CinematicVideo src={videos.ceremony} poster={image('woodland-wedding-ceremony')} posterAlt="Newlyweds walking toward an outdoor wedding ceremony" priority showControl />
             <span className="home-hero__media-chip home-hero__media-chip--top"><MapPin size={17} aria-hidden="true" />Toronto + GTA</span>
             <span className="home-hero__media-chip home-hero__media-chip--bottom"><Sparkles size={17} aria-hidden="true" />Planning • Design • Production</span>
           </motion.div>

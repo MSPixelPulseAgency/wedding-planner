@@ -3,7 +3,7 @@
 This repository contains the standalone `MSPixelPulseAgency/wedding-planner` demo. Do not merge it into another demo or reuse its LUMA identity without an explicit request.
 
 - Brand: LUMA Weddings & Events
-- Contact placeholders: `hello@mspixelpulse.com`, `+1 (000) 000-0000`
+- Contact details: `hello@mspixelpulse.com`, `+1 365-883-0338`
 - Service context: concept studio presented as serving Toronto, the GTA and destination celebrations
 - Production URL: `https://luma-event-planning.vercel.app/`
 - Legacy alias: `https://luma-weddings-events.vercel.app/`

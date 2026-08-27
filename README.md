@@ -78,10 +78,10 @@ Run `npm run media` only when intentionally rebuilding the local media set. The 
 
 LUMA is not presented as an operating planning company. Event stories, testimonials, packages and availability are illustrative. The site intentionally avoids invented awards, review ratings, founder biographies, certifications, venue partnerships, client names, office addresses and working social handles.
 
-Contact placeholders:
+Demo contact details:
 
 - `hello@mspixelpulse.com`
-- `+1 (000) 000-0000`
+- `+1 365-883-0338`
 - WhatsApp: `+1 365-883-0338`
 - Social links: intentionally unconfigured
 

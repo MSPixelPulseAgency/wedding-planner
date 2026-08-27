@@ -56,6 +56,7 @@ describe('LUMA routes', () => {
 
   it('validates the inquiry form before advancing', async () => {
     renderRoute('/contact')
+    expect((await screen.findAllByRole('link', { name: /\+1 365-883-0338/i })).length).toBeGreaterThan(0)
     fireEvent.click(await screen.findByRole('button', { name: /Continue/i }))
     expect(screen.getByText('Please enter your first name.')).toBeInTheDocument()
     expect(screen.getByText('Please enter a valid email address.')).toBeInTheDocument()
