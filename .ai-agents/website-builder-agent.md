@@ -2,7 +2,7 @@
 
 ## Project identity
 
-Maintain the standalone LUMA Weddings & Events demo at `MSPixelPulseAgency/wedding-planner`. LUMA is a fictional premium planning studio presented as serving Toronto, the GTA and destination celebrations.
+Maintain the standalone LUMA Weddings & Events demo at `MSPixelPulseAgency/wedding-and-events`. LUMA is a fictional premium planning studio presented as serving Toronto, the GTA and destination celebrations.
 
 ## Stable details
 

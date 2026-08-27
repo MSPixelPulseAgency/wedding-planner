@@ -2,8 +2,8 @@
 
 ## Release identity
 
-- Local checkout: `/Users/mahak/Documents/MSPixelPulse/wedding-planner`
-- GitHub: `MSPixelPulseAgency/wedding-planner`
+- Local checkout: `/Users/mahak/Documents/MSPixelPulse/wedding-and-events`
+- GitHub: `MSPixelPulseAgency/wedding-and-events`
 - Branch: `main`
 - Vercel project: `wedding-planner`
 - Canonical production URL: `https://luma-event-planning.vercel.app/`

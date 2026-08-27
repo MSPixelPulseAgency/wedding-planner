@@ -2,7 +2,7 @@
 
 ## Scope discipline
 
-Revise only this `wedding-planner` repository. Protect working routing, media, SEO output, accessibility, animations and demo-safety disclosures unless a change explicitly requires them.
+Revise only this `wedding-and-events` repository. Protect working routing, media, SEO output, accessibility, animations and demo-safety disclosures unless a change explicitly requires them.
 
 ## Review order
 

@@ -1,6 +1,6 @@
 # LUMA repository guidance
 
-This repository contains the standalone `MSPixelPulseAgency/wedding-planner` demo. Do not merge it into another demo or reuse its LUMA identity without an explicit request.
+This repository contains the standalone `MSPixelPulseAgency/wedding-and-events` demo. Do not merge it into another demo or reuse its LUMA identity without an explicit request.
 
 - Brand: LUMA Weddings & Events
 - Contact details: `hello@mspixelpulse.com`, `+1 365-883-0338`
