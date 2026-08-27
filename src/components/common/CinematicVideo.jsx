@@ -10,6 +10,19 @@ export function CinematicVideo({ src, poster, posterAlt, className = '', priorit
 
   useEffect(() => {
     const element = videoRef.current
+    if (!element || failed) return undefined
+    const markReady = () => setReady(true)
+    element.addEventListener('loadeddata', markReady)
+    element.addEventListener('canplay', markReady)
+    if (element.readyState >= 2) markReady()
+    return () => {
+      element.removeEventListener('loadeddata', markReady)
+      element.removeEventListener('canplay', markReady)
+    }
+  }, [failed, src])
+
+  useEffect(() => {
+    const element = videoRef.current
     if (!element || failed || !autoPlay) return undefined
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const saveData = navigator.connection?.saveData
@@ -38,7 +51,7 @@ export function CinematicVideo({ src, poster, posterAlt, className = '', priorit
     <div className={`cinematic-video${showControl ? ' cinematic-video--controlled' : ''} ${className}`.trim()}>
       <MediaImage src={poster} alt={posterAlt} className="cinematic-video__poster" eager={priority} />
       {!failed && (
-        <video className={ready ? 'cinematic-video__media--ready' : ''} ref={videoRef} muted loop playsInline preload={priority ? 'metadata' : 'none'} poster={poster} onCanPlay={() => setReady(true)} onError={() => setFailed(true)} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} aria-label={posterAlt}>
+        <video className={ready ? 'cinematic-video__media--ready' : ''} ref={videoRef} muted loop playsInline preload={priority ? 'metadata' : 'none'} poster={poster} onCanPlay={() => setReady(true)} onError={() => setFailed(true)} onPlay={() => { setPlaying(true); setReady(true) }} onPause={() => setPlaying(false)} aria-label={posterAlt}>
           <source src={src} type="video/mp4" />
         </video>
       )}
